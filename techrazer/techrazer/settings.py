@@ -27,7 +27,7 @@ SECRET_KEY = '-p@odla!+s!kyrt($pvct0%uu#j9foi58$3bnpt3uha_4g&&j#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','techrazer-djang-website.herokuapp.com/']
+ALLOWED_HOSTS = ['techrazer-djang-website.herokuapp.com']
 
 
 # Application definition
