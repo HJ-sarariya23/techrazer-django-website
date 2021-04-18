@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block title %} Tech Razer {% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+<div class="container">
+        <br>
+        <h2 class="mb-3 ">Latest Article</h2>
+        <div class="grid-container">
+                {% comment %} fetch title of the post {% endcomment %}
+                <div class="fchild-grid">
+                        {% for post in flts %}
+                        <div class="fchild-title">
+                                <a href="{{post.slug}}">
+                                        {{post.title}}
+                                </a>
+                        </div>
+                        <p>
+                                <span> <a href="/category/{{post.category}}/"
+                                                class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                </span> <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+                                <hr>
+                        </p>
+                        {% endfor %}
+
+                </div>
+
+                <div class="schild-grid">
+                        {% for post in slts %}
+                        <div class="schild-grid-bg">
+
+                                <a href="{{post.slug}}">
+                                        <img src="/static/img/{{post.image}}" alt=""></a>
+                                <p class="cate">
+                                        <a href="/category/{{post.category}}/"
+                                                class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                        <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+
+                                </p>
+
+                                <div class="schild-title">
+                                        <a href="{{post.slug}}">{{post.title}}</a>
+                                </div>
+
+
+                        </div>
+                        {% endfor %}
+                </div>
+        </div>
+
+
+
+</div>
+
+<div class="rapid-update">
+
+        <h3 class="rapid-update-title">Rapid Update</h3>
+        <div class="rapid-update-grid invisible-scrollbar">
+                {% for post in rapidlts %}
+                <div class="dabba1">
+
+                        <a href="{{post.slug}}">
+                                <img src="/static/img/{{post.image}}" alt=""></a>
+                        <p class="cate">
+                                <span>
+                                        <a href="/category/{{post.category}}/"
+                                                class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                </span>
+                                <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}
+                                </span>
+                        </p>
+                        <div class="rapid-update-box">
+
+                                <a href="{{post.slug}}"> {{post.title}}</a>
+                        </div>
+
+
+                </div>
+                {% endfor %}
+        </div>
+</div>
+
+<div class="container">
+        <h1 class="popular-posts">Popular Posts</h1>
+        <div class="latest-article">
+                {% for post in popularPosts %}
+                <div class="child-latest-article">
+                        <a href="{{post.slug}}"> <img src="/static/img/{{post.image}}" alt=""></a>
+                        <p class="cate">
+                                <a href="/category/{{post.category}}/"
+                                        class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+
+                        </p>
+                        <div class="latest-article-title">
+                                <a href="{{post.slug}}"> {{post.title}}</a>
+                        </div>
+
+                </div>
+                {% endfor %}
+        </div>
+</div>
+
+<div class="tranding-box">
+
+
+        <h3 class="rapid-update-title">Trends</h3>
+        <div class="rapid-update-grid invisible-scrollbar">
+                {% for post in trends %}
+                <div class="dabba1">
+
+                        <a href="{{post.slug}}">
+                                <img src="/static/img/{{post.image}}" alt=""></a>
+                        <p class="cate">
+                                <span>
+                                        <a href="/category/{{post.category}}/"
+                                                class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                </span>
+                                <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}
+                                </span>
+                        </p>
+                        <div class="rapid-update-box">
+
+                                <a href="{{post.slug}}"> {{post.title}}</a>
+                        </div>
+
+
+                </div>
+                {% endfor %}
+        </div>
+</div>
+
+<div class="container mb-5">
+        <h1 class="Editor-choice-title"></h1>
+        <div class="latest-article">
+                {% for post in allPosts %}
+                <div class="child-latest-article">
+                        <a href="{{post.slug}}"> <img src="/static/img/{{post.image}}" alt=""></a>
+                        <p class="cate">
+                                <a href="/category/{{post.category}}/"
+                                        class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+
+                        </p>
+                        <div class="latest-article-title">
+                                <a href="{{post.slug}}"> {{post.title}}</a>
+                        </div>
+                </div>
+                {% endfor %}
+        </div>
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Tech Razer {% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="container">
+
+    <h3 class=" search-title ">Search results of "<i><b>{{query}}</b></i> " : </h3>
+
+    {% if allPosts|length < 1 %} <P>No results found</P>
+        <hr>
+        <div class="mt-3">
+
+            Your search query: <b>{{query}}</b> did not match any documents. <br>
+            Suggesions:
+            <ul>
+                <li>Make sure that all words are correctly spelled.</li>
+                <li>Try different keywords.</li>
+                <li>Try more general keywords.</li>
+                <li>Try fewer keywords.</li>
+            </ul>
+        </div>
+        {% endif %}
+
+</div>
+<div class="container">
+
+
+    <div class="latest-article">
+        {% for post in allPosts %}
+        <div class="child-latest-article">
+            <a href="/{{post.slug}}"> <img src="/static/img/{{post.image}}" alt=""></a>
+            <p class="cate">
+                <a href="/category/{{post.category}}/" class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+
+            </p>
+            <div class="latest-article-title">
+                <a href="{{post.slug}}"> {{post.title}}</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}

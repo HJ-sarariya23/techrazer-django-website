@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.category}} | Tech Razer {% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="container">
+<div class="category-title">
+
+    <h1 ><b>{{cats}}</b></h1>
+</div>
+
+    <div class="latest-article">
+            {% for post in category_posts %}
+            <div class="child-latest-article">
+                    <a href="/{{post.slug}}"> <img src="/static/img/{{post.image}}" alt=""></a>
+                                    <p class="cate">
+                                            <a href="/category/{{post.category}}/"
+                                                            class=" badge bg-secondary category"><b>{{post.category}}</b></a>
+                                            <span class=" saw-time-in-title">{{post.timestamp | date:"F d, Y" }}</span>
+                            
+                                    </p>
+                            <div class="latest-article-title">
+                                    <a href="{{post.slug}}"> {{post.title}}</a>
+                            </div>
+                    
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}
