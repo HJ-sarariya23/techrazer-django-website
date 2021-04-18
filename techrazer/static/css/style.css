@@ -100,7 +100,7 @@ body::-webkit-scrollbar {
   border-radius: 5px;
 }
 
-/* rapid pdate  */
+/* rapid update  */
 .rapid-update {
   height: 20em;
   margin: 20px 0;
@@ -349,7 +349,7 @@ li.nav-item1 {
     width: 100vw;
   }
   .schild-grid {
-    grid-template-columns: repeat(auto-fill, minmax(105vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100vw, 1fr));
   }
   .schild-grid div img {
     height: 25vh;
@@ -376,10 +376,10 @@ li.nav-item1 {
     /* height: 100vw; */
   }
   .latest-article img {
-    width: 92vw;
+    width: 93vw;
   }
   .child-latest-article {
-    width: 97vw;
+    width: 93vw;
   }
   .ttl {
     padding-left: 25vw;
