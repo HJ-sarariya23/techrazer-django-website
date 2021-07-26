@@ -9,3 +9,5 @@ Functionalities:
 - search for other users and their blogs
 - like other blogs
 - comment on blogs
+
+Check Out the site : https://techrazer.herokuapp.com/
